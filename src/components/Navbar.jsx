@@ -15,29 +15,45 @@ const Navbar = () => {
 
        <Link to='/'><img src={assets.logo} className='w-36' alt='' /></Link> 
 
-        <ul className='hidden sm:flex gap-5  text-bold text-gray-700'>
+       <ul className='hidden sm:flex gap-5 text-bolder text-gray-700'>
+    <NavLink 
+        to='/' 
+        className={({ isActive }) => 
+            `flex flex-col items-center gap-1 text-decoration-none text-gray-700 ${isActive ? 'text-black' : ''}`
+        } 
+        end
+    >
+        <p>HOME</p>
+    </NavLink>
 
-            <NavLink to='/'  className='flex flex-col items-center gap-1 text-decoration-none text-gray-700 '>
-                <p>HOME</p>
-                {/* <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' /> */}
-            </NavLink>
+    <NavLink 
+        to='/collection' 
+        className={({ isActive }) => 
+            `flex flex-col items-center text-decoration-none text-gray-700 ${isActive ? 'text-black' : ''}`
+        }
+    >
+        <p>COLLECTION</p>
+    </NavLink>
 
-            <NavLink to='/collection'  className='flex flex-col items-center text-decoration-none text-gray-700 gap-1'>
-                <p>COLLECTION</p>
-                {/* <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/> */}
-            </NavLink>
+    <NavLink 
+        to='/about' 
+        className={({ isActive }) => 
+            `flex flex-col items-center text-decoration-none text-gray-700 ${isActive ? 'text-black' : ''}`
+        }
+    >
+        <p>ABOUT</p>
+    </NavLink>
 
-            <NavLink to='/about'  className='flex flex-col items-center text-decoration-none text-gray-700 gap-1'>
-                <p>ABOUT</p>
-                {/* <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/> */}
-            </NavLink>
+    <NavLink 
+        to='/contact' 
+        className={({ isActive }) => 
+            `flex flex-col items-center text-decoration-none text-gray-700 ${isActive ? 'text-black' : ''}`
+        }
+    >
+        <p>CONTACT</p>
+    </NavLink>
+</ul>
 
-            <NavLink to='/contact'  className='flex flex-col items-center text-decoration-none text-gray-700 gap-1'>
-                <p>CONTACT</p>
-                {/* <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/> */}
-            </NavLink>
-
-        </ul>
 
         <div className='flex items-center gap-6'>
             <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className='w-5 cursor-pointer' alt="" />
